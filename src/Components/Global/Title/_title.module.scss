@@ -7,11 +7,11 @@
 
     h2 {
         width: fit-content;
-        height: 139px;
-        font-size: 128px;
+        height: 134px;
+        font-size: 110px;
         // font-size: valueVw(128);
         font-weight: 800;
-        letter-spacing: text-space(128, 9);
+        letter-spacing: 9.52px;
         color: $white;
         -webkit-text-stroke: 1.5px $black-35;
         text-transform: uppercase;
@@ -19,24 +19,23 @@
         position: relative;
 
         @include mediaDesktop {
-            font-size: 120px;
+            font-size: 105px;
             height: 130px;
-
         }
 
         @include mediaLaptop {
-            font-size: 110px;
-            height: 120px;
+            font-size: 90px;
+            height: 110px;
         }
 
-        @include mediaTabPortrait {
-            height: 105px;
-            font-size: 95px;
-            letter-spacing: text-space(100, 9);
-        }
+        // @include mediaTabPortrait {
+        //     height: 105px;
+        //     font-size: 95px;
+        //     letter-spacing: text-space(100, 9);
+        // }
 
         @include mediaMobile {
-            height: 65px;
+            height: 70px;
             font-size: 55px;
             letter-spacing: text-space(66, 7);
             padding-right: 8px;
@@ -52,20 +51,15 @@
 
     &__center {
         width: 100%;
-        // height: 100%;
-        padding: 0 40px 0 20px;
+        padding: 0 20px 0 25px;
         @include flex (space-between, center, row);
-        column-gap: 20px;
+        column-gap: 15px;
 
         @include mediaTabPortrait {
             column-gap: 9px;
             padding: 0 20px 0 10px;
         }
 
-        @include mediaMobile {
-            column-gap: 10px;
-            padding: 0 8px 0 10px;
-        }
 
         &::before {
             content: "";
@@ -91,9 +85,9 @@
 
         p {
             width: fit-content;
-            height: 21px;
+            // height: 21px;
             text-wrap: nowrap;
-            font-size: 16px;
+            font-size: 13px;
             letter-spacing: text-space(16, 8);
             font-weight: 400;
             color: $blue-primary;
@@ -130,25 +124,26 @@
 
     .descri {
         @include text-linear-primary;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 700;
         letter-spacing: text-space(12, 12);
         text-transform: uppercase;
-        margin-top: 28px;
-        padding-right: 15px;
+        margin-top: 15px;
 
         @include mediaLaptop {
-            margin-top: 17px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 10px;
         }
 
-        @include mediaTabPortrait {
-            margin-top: 16px;
-        }
+        // @include mediaTabPortrait {
+        //     margin-top: 16px;
+        // }
 
         @include mediaMobile {
             font-size: 9px;
             letter-spacing: 0.96px;
-            margin-top: 15px;
+            margin-top: 8px;
         }
     }
 }

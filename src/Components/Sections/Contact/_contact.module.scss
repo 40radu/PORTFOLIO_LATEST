@@ -3,18 +3,18 @@
 .contact_section {
     width: 100%;
     min-height: 100vh;
-    padding-top: 100px;
-    @include flex (start, center, column);
+    height: fit-content;
+    @include flex (center, center, column);
     row-gap: 65px;
     position: relative;
 
-    @include mediaTabPortrait {
+    @media (max-width : 768px) {
         row-gap: 20px;
+        padding-top: 75px;
         padding-bottom: 20px;
     }
 
     @include mediaMobile {
-        padding-top: 105px;
         row-gap: 15px;
     }
 
@@ -30,14 +30,14 @@
             column-gap: 50px;
         }
 
-        @include mediaTabPortrait {
+        @media (max-width : 768px) {
             flex-direction: column;
-            row-gap: 15px;
+            row-gap: 20px;
         }
 
         @include mediaMobile {
             width: 100%;
-            row-gap: 12px;
+            row-gap: 15px;
         }
 
         .image_section {
@@ -46,30 +46,43 @@
             position: relative;
             padding-bottom: 50px;
 
-            @include mediaTabPortrait {
+            @media (max-width : 768px) {
                 padding-bottom: 10px;
             }
 
             img {
+
+                @include mediaLaptop {
+                    width: 372px;
+                }
+
                 @include mediaMobile {
-                    width: 234px;
-                    height: 215px;
+                    // width: 234px;
+                    // height: 215px;
+
+                    width: 252px;
+                    height: 240px;
                 }
             }
 
             p {
                 @include text-linear-primary;
                 font-size: 10px;
-                font-weight: 700;
+                font-weight: 600;
                 letter-spacing: text-space(10, 18);
                 position: absolute;
                 bottom: auto;
-                left: 105px;
+                left: 50%;
+                translate: -50% -50%;
+                bottom: 30px;
+
+                @media (max-width : 768px) {
+                    bottom: -15px;
+                }
 
                 @include mediaMobile {
-                    font-size: 8px;
+                    font-size: 10px;
                     letter-spacing: text-space(8, 18);
-                    left: 35px;
                 }
 
             }
@@ -83,10 +96,14 @@
             @include mediaDesktop {
                 display: flex;
                 position: absolute;
-                bottom: 75px;
+                bottom: 40px;
+
+                @media (max-height : 800px) {
+                    bottom: 15px;
+                }
             }
 
-            @include mediaTabPortrait {
+            @media (max-width : 768px) {
                 display: flex;
                 position: static;
             }
@@ -125,7 +142,7 @@
             }
 
             .errorEmail {
-                @include flex (center, center,column);
+                @include flex (center, center, column);
                 color: #ff1c1cd6;
                 font-size: 12px;
                 font-weight: 400;
@@ -140,8 +157,16 @@
                 @include flex(start, start, row);
                 padding-left: 10px;
 
+                @include mediaLaptop {
+                    width: 410px;
+                }
+
+                @media (max-width : 768px) {
+                    width: 100%;
+                }
+
                 &::before {
-                    content : "* ";
+                    content: "* ";
                     color: #ff1c1cd6;
                 }
             }

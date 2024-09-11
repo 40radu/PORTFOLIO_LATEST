@@ -27,24 +27,25 @@ function MenuBar() {
             if (maskForNav) {
                 gsap.to(maskForNav, {
                     right: "0",
-                    duration: 0.65,
+                    duration: 0.60,
                     delay: 0,
-
+                    ease : 'power4'
                 })
             }
 
             if (maskBody) {
                 setTimeout(() => {
                     maskBody.style.visibility = 'visible'
-                }, 200)
+                }, 350)
             }
 
             if (body) {
                 body.style.overflow = 'hidden'
                 gsap.to(navBar, {
                     right: "0",
-                    duration: 0.65,
+                    duration: 0.60,
                     delay: 0,
+                    ease : 'power4'
 
                 });
 

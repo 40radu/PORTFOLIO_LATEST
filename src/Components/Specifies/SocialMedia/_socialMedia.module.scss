@@ -8,7 +8,7 @@
 
     position: absolute;
     left: 80px;
-    top: 40%;
+    top: 43%;
 
     @include mediaDesktop {
         display: none;
@@ -21,9 +21,9 @@
     &::after {
         content: "";
         width: 2px;
-        height: 55px;
+        height: 45px;
         margin-top: 10px;
-        background-color: $blue-primary;
+        border: 1px dashed $blue-primary;
     }
 
     img {

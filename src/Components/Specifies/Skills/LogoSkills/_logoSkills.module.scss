@@ -1,8 +1,8 @@
 @import '../../../../app/mixins';
 
 .logo_container {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
     @include flex(center, center, row);
     border: 1px dashed $black-25;
     border-radius: 50%;
@@ -10,8 +10,8 @@
     transition: visibility 2s ease;
 
     @include mediaLaptop {
-        width: 95px;
-        height: 95px;
+        width: 90px;
+        height: 90px;
     }
 
     @include mediaTabPortrait {
@@ -36,9 +36,10 @@
     }
 
     img {
+        scale: 0.9;
 
         @include mediaLaptop {
-            scale: 0.9;
+            scale: 0.8;
         }
 
         @include mediaTabPortrait {
@@ -55,21 +56,20 @@
         display: block;
         position: absolute;
         z-index: 1;
-        color: transparent;
-        font-weight: 800;
+        color: $blue-primary;
+        font-weight: 400;
         text-transform: capitalize;
         visibility: hidden;
-        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.45);
-        background-clip: text;
         top: 108%;
-        letter-spacing: 0.66px;
+        letter-spacing: 0.6px;
+        font-size: 14px;
 
         @include mediaLaptop {
             letter-spacing: 0.5px;
         }
 
         @include mediaMobile {
-            font-size: 14px;
+            font-size: 12px;
         }
     }
 }

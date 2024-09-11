@@ -50,18 +50,19 @@
     z-index: -20;
     background-color: white;
     border-left: 1px dotted rgba(0, 0, 0, 0.15);
-    margin-top: 100.5px;
     padding-bottom: 20px;
-    box-shadow: 0px 3px 3px 0 rgb(0 0 0 / 15%);;
+    box-shadow: 0px 3px 3px 0 rgb(0 0 0 / 15%);
+    ;
+    margin-top: 70.5px;
 
-    @include mediaTabPortrait {
-        margin-top: 70.5px;
+    @include mediaMobile {
+        height: 60vh;
     }
 
     @media (max-height : 480px) {
         display: block;
         padding-bottom: 70.5px;
-        height: 100vh;
+        min-height: 100vh;
         overflow-y: scroll;
     }
 }

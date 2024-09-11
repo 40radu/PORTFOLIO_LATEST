@@ -4,14 +4,14 @@
     width: 100%;
     height: 100vh;
     @include flex (center, center, column);
-    row-gap: 60px;
+    row-gap: 40px;
     overflow: hidden;
     position: relative;
 
     @include mediaTabPortrait {
         height: fit-content;
         padding: 50px;
-        padding-top: 100px;
+        padding-top: 75px;
         padding-bottom: 80px;
 
     }
@@ -90,13 +90,12 @@
         }
 
         .btn_showMore {
-            font-size: 13px;
+            font-size: 12px;
             letter-spacing: text-space(13,5);
-            height: 28px;
-            font-weight: 600;
+            font-weight: 500;
             background-color: $black-35;
             color: $white;
-            padding: 6px 12px 4px 12px;
+            padding: 6px 12px;
             border-radius: 5px;
             position: absolute;
             bottom: 40px;

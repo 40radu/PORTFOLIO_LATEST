@@ -14,7 +14,7 @@ function Skills() {
     const skillsSection = useRef<HTMLDivElement>(null)
     const containerBottomLogo = useRef <HTMLDivElement>(null)
     const btn_showMore = useRef<HTMLButtonElement>(null)
-    const [valueButton, setValueButton] = useState('View More')
+    const [valueButton, setValueButton] = useState <'View more' | 'View less'>('View more')
 
     useGSAP(() => {
 
@@ -74,12 +74,12 @@ function Skills() {
 
         if (containerBottomLogo.current) {
             const containerBottom = containerBottomLogo.current
-            if (valueButton === 'View More') {
+            if (valueButton === 'View more') {
                 containerBottom.style.display = 'flex'
-                setValueButton('View Less')
+                setValueButton('View less')
             } else {
                 containerBottom.style.display = 'none'
-                setValueButton('View More')
+                setValueButton('View more')
 
             }
         }

@@ -1,11 +1,11 @@
 @import '../../../app/mixins';
 
 .btn_primary {
-    padding: 9px 40px 4px;
+    padding: 6px 35px;
     border-radius: 18px;
     color: $white;
     @include background-linear-primary;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: text-space(18, 4);
     font-weight: 600;
     @include flex (center, center, row);
@@ -14,44 +14,22 @@
     width: fit-content;
     height: fit-content;
 
-    @include mediaDesktop {
-        padding: 8px 40px 3px;
-        height: 39px;
-        font-size: 17px;
-    }
-
     @include mediaLaptop{
-        height: fit-content;
+        font-size: 14px;
     }
 
     @include mediaMobile {
         font-size: 12px;
         letter-spacing: text-space(12, 4);
-        padding: 6px 20px 3px 20px;
-        height: fit-content;
+        padding: 6px 25px;  
     }
 
     &:hover {
         letter-spacing: text-space(18, 8);
-        padding: 9px 45px 4px;
-
-        @include mediaDesktop {
-            font-size: 17px;
-            padding: 8px 45px 3px;
-            height: 39px;
-        }
-
-        @include mediaLaptop {
-            font-size: 17px;
-            padding: 8px 45px 3px;
-            height: fit-content;
-        }
+        padding: 6px 37px;
 
         @include mediaMobile {
-            font-size: 12px;
-            letter-spacing: text-space(12, 8);
-            padding: 6px 24px 3px 24px;
-            height: fit-content;
+            padding: 6px 25px;
         }
     }
 }

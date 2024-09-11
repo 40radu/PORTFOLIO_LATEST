@@ -1,13 +1,15 @@
 @import '../../../app/mixins';
 
 @keyframes rotateAnimation {
-    0%{
+    0% {
         rotate: 0deg;
     }
-    50%{
+
+    50% {
         rotate: 10deg;
     }
-    100%{
+
+    100% {
         rotate: 0deg;
     }
 }
@@ -17,8 +19,7 @@
     width: 100%;
     min-height: 100vh;
     @include flex (center, center, row);
-    padding-bottom: 100px;
-    column-gap: 100px;
+    column-gap: 75px;
     position: relative;
     background-color: white;
 
@@ -31,8 +32,7 @@
     }
 
     @include mediaLaptop {
-        column-gap: 30px;
-        padding-bottom: 70px;
+        column-gap: 0;
     }
 
     @media (max-width:768px) {
@@ -54,13 +54,18 @@
     .img {
         margin-bottom: 60px;
 
+        @include mediaLaptop {
+            width: 372px;
+        }
+
+
         @media (max-width:768px) {
             margin-bottom: 20px;
         }
 
         @include mediaMobile {
-            width: 234px;
-            height: 215px;
+            width: 252px;
+            height: 240px;
         }
     }
 
@@ -69,10 +74,10 @@
         width: fit-content;
         height: fit-content;
         @include flex (start, start, column);
-        row-gap: 20px;
+        row-gap: 15px;
 
         @include mediaLaptop {
-            row-gap: 12px;
+            row-gap: 14px;
         }
 
         @media (max-width:768px) {
@@ -83,28 +88,28 @@
 
         h1 {
             height: fit-content;
-            width: 644px;
-            line-height: 65px;
-            font-size: 63px;
+            width: 590px;
+            line-height: 58px;
+            font-size: 55px;
             font-weight: 800;
-            letter-spacing: text-space(60, 17);
+            letter-spacing: text-space(58, 13);
             @include text-linear-primary;
 
             @media (min-width : 1441px) {
-                font-size: 69px;
-                width: 682px;
+                font-size: 58px;
+                width: 610px;
             }
 
             @include mediaDesktop {
-                font-size: 58px;
-                letter-spacing: text-space(58, 8);
+                font-size: 52px;
+                width: 560px;
+                line-height: 55px;
             }
 
             @include mediaLaptop {
-                width: fit-content;
-                max-width: 500px;
-                font-size: 54px;
-                line-height: 60px;
+                font-size: 44px;
+                width: 490px;
+                line-height: 46px;
             }
 
             @media (max-width:768px) {
@@ -117,16 +122,21 @@
             @include mediaMobile {
                 font-size: 32px;
                 width: 100%;
-                line-height: 32px;
-                letter-spacing: text-space(28, 16);
+                line-height: 38px;
+                letter-spacing: 3.2px;
+            }
+
+            @media (max-width : 320px) {
+                line-height: 41px;
+                letter-spacing: 0.6px;
             }
         }
 
         p {
             width: 530px;
             height: fit-content;
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 14px;
+            font-weight: 600;
             color: $gray-secondary;
             letter-spacing: 1px;
 
@@ -135,13 +145,11 @@
             }
 
             @include mediaLaptop {
-                font-size: 14.2px;
-                padding-right: 60px;
+                width: 480px;
             }
 
             @media (max-width:768px) {
                 font-size: 14px;
-                letter-spacing: 0.93px;
                 max-width: 550px;
                 width: fit-content;
                 padding-right: 0;
@@ -150,6 +158,7 @@
 
             @include mediaMobile {
                 width: 100%;
+                font-weight: 500;
             }
 
             span.emoji {
@@ -157,7 +166,7 @@
                 animation: rotateAnimation 1s ease-in infinite;
             }
 
-           
+
         }
 
         .container_button {
@@ -165,8 +174,17 @@
             column-gap: 45px;
             margin-top: 20px;
 
+            @include mediaDesktop {
+                margin-top: 15px;
+            }
+
+            @include mediaLaptop {
+                margin-top: 12px;
+                column-gap: 25px;
+            }
+
             @include mediaMobile {
-                column-gap: 20px;
+                column-gap: 15px;
                 margin-top: 8px;
                 width: 100%;
                 justify-content: center;

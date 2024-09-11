@@ -2,10 +2,10 @@
 
 .about_section {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     @include flex (center, center, column);
     row-gap: 35px;
-    padding-top: 150px;
+    padding-top: 100px;
     overflow: hidden;
 
     @include mediaTabPortrait {
@@ -13,6 +13,7 @@
         row-gap: 30px;
         padding-top: 100px;
         padding-bottom: 50px;
+        min-height: auto;
     }
 
     @include mediaMobile {
@@ -39,28 +40,25 @@
         }
 
         p {
-            width: 900px;
+            max-width: 900px;
             height: fit-content;
             text-align: center;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 500;
             color: $blue-primary;
             letter-spacing: 1px;
 
-            @include mediaTabPortrait {
-                width: 100%;
+            @include mediaDesktop {
                 font-size: 14px;
-                letter-spacing: 0.93px;
-                text-align: center;
-                max-width: 570px;
             }
 
-            ;
-
+            @include mediaTabPortrait {
+                width: 100%;
+                }
             @include mediaMobile {
-                font-size: 14px;
                 width: 100%;
                 text-align: left;
+                font-weight: 400;
             }
         }
     }

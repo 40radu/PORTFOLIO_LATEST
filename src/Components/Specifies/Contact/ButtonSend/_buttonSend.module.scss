@@ -16,7 +16,7 @@
         height: 51px;
     }
 
-    @include mediaTabPortrait {
+    @media (max-width : 768px){
         width: 570px;
     }
 
@@ -41,11 +41,10 @@
     }
 
     p {
-        height: 20px;
-        font-size: 17px;
+        font-size: 16px;
         letter-spacing: text-space(17, 12);
         color: $white;
-        font-weight: 700;
+        font-weight: 600;
         text-transform: capitalize;
 
         @include mediaLaptop {
@@ -53,7 +52,6 @@
         }
 
         @include mediaMobile{
-            height: 17px;
             font-size: 14px;
             letter-spacing: text-space(14, 12);
         }
@@ -67,7 +65,7 @@
             width: 390px;
         }
 
-        @include mediaTabPortrait {
+        @media (max-width : 768px) {
             width: 550px;
         }
 
@@ -91,7 +89,7 @@
                 height: 51px;
             }
 
-            @include mediaTabPortrait {
+            @media (max-width : 768px) {
                 width: 570px;
             }
 

@@ -81,13 +81,13 @@ function About() {
             />
 
             <div className={styles.more_description}>
-                <p className='text-description'>Each new challenge is an opportunity for me to grow and improve.
-                    My goal is to create intuitive and high-performing user experiences.
-                    Feel free to contact me to explore new collaborations!</p>
+                <p className='text-description'>For me, every new challenge is an opportunity to grow and improve.
+                My goal is to create intuitive and high-performing user experiences.
+                It's always a real pleasure for me to work on new projects. </p>
 
-                <p className='text-description'>Passionate about innovation and technology, I am a developer specializing in creating web and mobile solutions.
-                    Since 2023, I have focused my efforts on front-end development, mastering various
-                    languages and frameworks. Don't hesitate to contact me ! </p>
+                <p className='text-description'>I'm passionate about innovation and technology, 
+                    and a developer specializing in the creation of web and mobile solutions. Since 2023, I've been focusing my efforts on front-end development, 
+                    mastering various languages and frameworks. Don't hesitate to contact me if you'd like to work together! </p>
 
                 <div className={styles.flowerZone}>
                     <Image src={decoLeft} alt='' />
