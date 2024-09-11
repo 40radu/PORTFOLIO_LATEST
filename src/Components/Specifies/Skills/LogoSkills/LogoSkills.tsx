@@ -68,7 +68,7 @@ function LogoSkills({ icon }: ILogoSkills) {
     <>
       <div className={styles.logo_container} >
         {srcIcon && <Image src={srcIcon} alt=''/>}
-        <p>{icon}</p>
+        <p translate='no'>{icon}</p>
       </div>
     </>
 

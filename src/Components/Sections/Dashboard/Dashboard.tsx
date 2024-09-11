@@ -18,37 +18,35 @@ function Dashboard() {
     const leftContainer = useRef(null)
     const rightContainer = useRef(null)
 
-    function todo() {
-
-    }
-
-
     useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
+            gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(homeSection.current, {
-            scrollTrigger: {
-                // markers: true,
-                trigger: homeSection.current,
-                end: "bottom 30%",
-                start: "50% top",
-                scrub: 1,
+            gsap.to(homeSection.current, {
+                scrollTrigger: {
+                    // markers: true,
+                    trigger: homeSection.current,
+                    end: "bottom 30%",
+                    start: "50% top",
+                    scrub: 1,
+                    
 
-            },
-            opacity: 0.25,
-            duration: 10
-        })
+                },
+                opacity: 0.25,
+                duration: 10,
+                
+            })
 
-        gsap.from(leftContainer.current, {
-            delay: 0.8,
-            duration: 1,
-            scale: 0.84
-        })
-        gsap.from(rightContainer.current, {
-            delay: 0.8,
-            duration: 1,
-            scale: 0.84
-        })
+            gsap.from(leftContainer.current, {
+                delay: 1.8,
+                duration: 1,
+                scale: 0.85
+            })
+            gsap.from(rightContainer.current, {
+                delay: 1.8,
+                duration: 1,
+                scale: 0.85
+            })
+
 
     }, { scope: homeSection })
 
@@ -63,14 +61,14 @@ function Dashboard() {
 
             <div className={styles.section_home__right} ref={rightContainer}>
                 <h1 translate="no">Front-End React Developer</h1>
-                <p>Hi <span className={styles.emoji}>&#128075;</span>, i'am <span className={styles.name}>Radonirina</span> and
-                    welcome to my portfolio. It will help you get to know me better and remember, we can build something amazing together! </p>
+                <p>Hello <span className={styles.emoji}>&#128075;</span>, i'am <span className={styles.name}>Radonirina</span> and
+                    welcome to my portfolio. It will help you get to know me better. Remember, we can build something extraordinary together!</p>
                 <div className={styles.container_button}>
                     <a href="cv.pdf" download="cv_portfolio_rado.pdf">
                         <Button type="button"
                             className="btn_secondary"
                             value="Download CV"
-                            onClick={todo} />
+                        />
                     </a>
                     <Link href={'#contact'}>
                         <Button className="btn_primary"

@@ -156,6 +156,7 @@
                 width: 100%;
                 @include flex(start, start, row);
                 padding-left: 10px;
+                max-width: 470px;
 
                 @include mediaLaptop {
                     width: 410px;

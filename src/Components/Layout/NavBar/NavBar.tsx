@@ -28,7 +28,7 @@ function NavBar() {
       <nav className={styles.navBar_container} >
         <Logo />
         <MenuBar />
-        <ul className={styles.links_wrapper} translate='no'>
+        <ul className={styles.links_wrapper}>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#project">Project</a></li>

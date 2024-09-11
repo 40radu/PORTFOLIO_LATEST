@@ -53,14 +53,14 @@ function Title({ title, description, underTitle }: ITitle) {
   })
   return (
     <>
-      <section className={styles.section_title} translate='no'>
-        <h2 ref={refTitle}>
+      <section className={styles.section_title} >
+        <h2 ref={refTitle} translate='no'>
           {title}
         </h2>
         <div className={styles.section_title__center}>
           <p>{underTitle}</p>
         </div>
-        <p className={styles.descri} ref={refDescription}>{description}</p>
+        <p className={styles.descri} ref={refDescription} translate='no'>{description}</p>
       </section>
     </>
   )
