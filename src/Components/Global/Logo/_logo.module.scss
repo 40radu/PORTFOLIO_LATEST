@@ -52,11 +52,15 @@
   }
 
   &__bottom {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 800;
     @include text-linear-primary();
     text-align: left;
     letter-spacing: 2.76px;
+
+    @media (min-width : 1441px){
+      font-size: 30px;
+    }
 
     @include mediaLaptop {
       font-size: 29px;

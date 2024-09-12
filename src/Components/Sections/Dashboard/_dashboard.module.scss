@@ -19,7 +19,7 @@
     width: 100%;
     min-height: 100vh;
     @include flex (center, center, row);
-    column-gap: 75px;
+    column-gap: 55px;
     position: relative;
     background-color: white;
 
@@ -74,7 +74,11 @@
         width: fit-content;
         height: fit-content;
         @include flex (start, start, column);
-        row-gap: 15px;
+        row-gap: 13px;
+
+        @media(min-width : 1441px){
+            row-gap: 15px;
+        }
 
         @include mediaLaptop {
             row-gap: 14px;
@@ -90,7 +94,7 @@
             height: fit-content;
             width: 590px;
             line-height: 58px;
-            font-size: 55px;
+            font-size: 53px;
             font-weight: 800;
             letter-spacing: text-space(58, 13);
             @include text-linear-primary;

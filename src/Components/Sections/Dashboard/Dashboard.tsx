@@ -39,12 +39,15 @@ function Dashboard() {
             gsap.from(leftContainer.current, {
                 delay: 1.8,
                 duration: 1,
-                scale: 0.85
+                scale: 0.87,
+                ease : "elastic"
+
             })
             gsap.from(rightContainer.current, {
                 delay: 1.8,
                 duration: 1,
-                scale: 0.85
+                scale: 0.87,
+                ease : "elastic"
             })
 
 

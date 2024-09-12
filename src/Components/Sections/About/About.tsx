@@ -5,7 +5,7 @@ import styles from './_about.module.scss'
 import Title from '@/Components/Global/Title/Title'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import _ScrollTrigger, { ScrollTrigger } from 'gsap/ScrollTrigger';
 import decoLeft from '../../../public/deco_flower1.png'
 import decoRight from '../../../public/deco_flower2.png'
 import Image from 'next/image';
@@ -14,21 +14,18 @@ import Image from 'next/image';
 
 function About() {
     const title_about = useRef()
-    const about_section = useRef <HTMLDivElement>(null)
+    const about_section = useRef<HTMLDivElement>(null)
     const titleDescription = useRef()
 
     useGSAP(() => {
 
         gsap.registerPlugin(ScrollTrigger)
 
-        // T E X T D E S C R I P T I O N
-
         const textDescription = document.querySelectorAll(`.${styles.more_description} p`)
 
-        // gsap.set ( textDescription, {xPercent: -100})
         gsap.from(textDescription, {
             scrollTrigger: {
-                // markers : true, 
+                // markers : true,     
                 trigger: textDescription,
                 start: "top 70%",
                 endTrigger: about_section?.current,
@@ -37,24 +34,42 @@ function About() {
                 // scrub:1,
             },
             xPercent: -100,
-            duration: 0.5,
+            duration: 0.55,
             stagger: 0.25,
             opacity: 0
 
         })
 
         if (about_section) {
-            gsap.to(about_section.current, {
+            
+            let animate_pin = gsap.to(about_section.current, {
                 scrollTrigger: {
                     trigger: about_section.current,
-                    start: '20% top',
-                    end: '50% top',
-                    // markers: true, 
-                    scrub: 1
+                    start: 'top top',
+                    end: 'bottom top',
+                    markers: true,
+                    scrub: 1,
+                    pin: true,
+                    pinSpacing: false,
                 },
-                opacity: 0.8,
-                duration: 5,
-                delay: 1.5,
+                opacity: 0,
+        
+            })
+
+            ScrollTrigger.create({
+                trigger: about_section.current,
+                start: 'top top',
+                end: 'bottom top',
+                onLeave: () => {
+                    console.log('leave')
+                    animate_pin.scrollTrigger?.disable()
+                    console.log("enabled?")
+                  },
+                  onLeaveBack: () => {
+                    console.log('leave back')
+                    animate_pin.scrollTrigger?.enable()
+                    console.log("disable")
+                  }
             })
 
             gsap.from(about_section.current, {
@@ -82,11 +97,11 @@ function About() {
 
             <div className={styles.more_description}>
                 <p className='text-description'>For me, every new challenge is an opportunity to grow and improve.
-                My goal is to create intuitive and high-performing user experiences.
-                It's always a real pleasure for me to work on new projects. </p>
+                    My goal is to create intuitive and high-performing user experiences.
+                    It's always a real pleasure for me to work on new projects. </p>
 
-                <p className='text-description'>I'm passionate about innovation and technology, 
-                    and a developer specializing in the creation of web and mobile solutions. Since 2023, I've been focusing my efforts on front-end development, 
+                <p className='text-description'>I'm passionate about innovation and technology,
+                    and a developer specializing in the creation of web and mobile solutions. Since 2023, I've been focusing my efforts on front-end development,
                     mastering various languages and frameworks. Don't hesitate to contact me if you'd like to work together! </p>
 
                 <div className={styles.flowerZone}>

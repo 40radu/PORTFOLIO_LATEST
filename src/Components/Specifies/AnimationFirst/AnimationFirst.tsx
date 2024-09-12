@@ -1,19 +1,11 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import styles from './_animationFirst.module.scss'
 
 function AnimationFirst() {
-
-  const [loader, setLoader] = useState(false)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoader(true)
-    }, 1000)
-  }, [])
 
   useGSAP(() => {
 
@@ -24,67 +16,73 @@ function AnimationFirst() {
       body ? body.style.overflow = 'auto' : ''
     }, 3000)
 
+
+    const bannerLeft = document.querySelector('#banner__left') as HTMLDivElement
+    const bannerRight = document.querySelector('#banner__right') as HTMLDivElement
+    const textLeft = document.querySelector('#text_left') as HTMLParagraphElement
+    const textRight = document.querySelector('#text_right') as HTMLParagraphElement
+
     setTimeout(() => {
+        textLeft.style.visibility = 'visible'
+        textRight.style.visibility = 'visible'
+    }, 800)
 
-      const bannerLeft = document.querySelector('#banner__left')
-      const bannerRight = document.querySelector('#banner__right')
-      const wrapperAll = document.querySelector('#wrapper_animation') as HTMLDivElement
+    if (bannerLeft) {
+      gsap.to (bannerRight, {
+        backgroundColor : '#f8fafc',
+        duration : 0.7
+      })
+      gsap.to(bannerLeft, {
+        yPercent: -1,
+        yoyo: true,
+        duration: 0.25,
+        repeat: 1,
+        ease: 'power3',
+        delay: 1
+      })
+      gsap.to(bannerLeft, {
+        delay: 1.75,
+        duration: 0.85,
+        opacity : 0
 
-      setTimeout(() => {
-        wrapperAll.style.backgroundColor = 'transparent'
-        wrapperAll.style.width = 'fit-content'
-        wrapperAll.style.height = 'fit-content'
-      }, 450)
+      })
+    }
+    if (bannerRight) {
+      gsap.to(bannerRight, {
+        yPercent: 1,
+        yoyo: true,
+        duration: 0.25,
+        repeat: 1,
+        ease: 'power3',
+        delay: 1
 
-      if (bannerLeft) {
-        gsap.to(bannerLeft, {
-          yPercent: -1,
-          yoyo: true,
-          duration: 0.25,
-          repeat: 1,
-          ease: 'power3'
-        })
-        gsap.to(bannerLeft, {
-          delay: 0.75,
-          xPercent: -100,
-          duration: 0.85,
 
-        })
-      }
-      if (bannerRight) {
-        gsap.to(bannerRight, {
-          yPercent: 1,
-          yoyo: true,
-          duration: 0.25,
-          repeat: 1,
-          ease: 'power3'
+      })
+      gsap.to(bannerRight, {
+        delay: 1.75,
+        duration: 0.85,
+        opacity : 0
 
-        })
-        gsap.to(bannerRight, {
-          delay: 0.75,
-          xPercent: 100,
-          duration: 0.85,
 
-        })
-      }
+      })
+    }
 
-    }, 1000)
 
   })
 
   return (
-    <section className={styles.animation_section} id='wrapper_animation'>
+    // <section className={styles.animation_section} id='wrapper_animation'>
+    <section>
 
-      {loader && <>
-        <div id='banner__left' className={styles.bannerLeft}>
-          <p>Welcome To</p>
-        </div>
 
-        <div id='banner__right' className={styles.bannerRight}>
-          <p>
-            My Portfolio</p>
-        </div>
-      </>}
+      <div id='banner__left' className={styles.bannerLeft}>
+        <p id='text_left'>Welcome To</p>
+      </div>
+
+      <div id='banner__right' className={styles.bannerRight}>
+        <p id='text_right'>
+          My Portfolio</p>
+      </div>
 
     </section>
 
