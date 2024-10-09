@@ -1,53 +1,69 @@
 @import '../../../../app/mixins';
 
 .card_wrapper {
-    width: 518px;
+    width: 520px;
     height: fit-content;
     @include flex(start, start, column);
-    border-radius: 25px;
-    border: solid 1px $black-35;
-    padding: 15px;
-    row-gap: 10px;
+    box-shadow: 8px 10px 13px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
 
-    .image {
-        width: 100% ;
-        height: 300px;
-        border-radius: 10px;
+    @include mediaLaptop {
+        width: 400px;
     }
 
-    .text_wrapper {
-        @include flex(start, start,column);
+    @include mediaTabPortrait {
+        width: 520px;
+    }
+
+    @include mediaMobile {
         width: 100%;
-        height: fit-content;
-        padding: 0 10px;
-        row-gap: 10px;
+    }
+
+    .image {
+        width: 100%;
+        height: 270px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: 0 0;
+
+        @include mediaLaptop {
+            height: 220px;
+        }
+
+        @include mediaTabPortrait {
+            height: 270px;
+        }
+
+        @include mediaMobile {
+            height: 160px;
+        }
+    }
+
+    .descriZone {
+        padding: 0 15px;
+        @include flex (start, start, column);
+        row-gap: 8px;
+        background: rgba(0, 0, 0, 0.02);
+        padding: 12px;
 
         h3 {
-            font-size: 16px;
             font-weight: 700;
-            letter-spacing: text-space(16,10);
+            letter-spacing: 0.6px;
             color: $blue-primary;
-            text-transform: uppercase;
-            @include flex (start, start,column);
-            
-            &::after {
-                content: '';
-                width: 98%;
-                height: 2px;
-                background-color: $black-50;
+            @include mediaMobile {
+                font-size: 14px;
             }
         }
 
-        ul {
-            @include flex (start, start,row);
-            column-gap: 10px;
-            padding-bottom: 10px;
-            li {
-                border: solid 0.5px $black-25;
-                border-radius: 8px;
-                padding: 4px 10px 2px;
+        .descriText {
+            font-size: 14px;
+            letter-spacing: 0.6px;
+            font-weight: 400;
+            color: $black-50;
+            min-height: 42px;
+            max-height: 63px;
+            @include mediaMobile {
                 font-size: 12px;
-                font-weight: 300;
             }
         }
     }

@@ -46,7 +46,7 @@ function About() {
                 scrollTrigger: {
                     trigger: about_section.current,
                     start: 'top top',
-                    end: 'bottom top',
+                    end: 'bottom 15%',
                     // markers: true,
                     scrub: 1,
                     pin: true,
@@ -61,14 +61,14 @@ function About() {
                 start: 'top top',
                 end: 'bottom top',
                 onLeave: () => {
-                    console.log('leave')
+                    // console.log('leave')
                     animate_pin.scrollTrigger?.disable()
-                    console.log("enabled?")
+                    // console.log("enabled?")
                   },
                   onLeaveBack: () => {
-                    console.log('leave back')
+                    // console.log('leave back')
                     animate_pin.scrollTrigger?.enable()
-                    console.log("disable")
+                    // console.log("disable")
                   }
             })
 

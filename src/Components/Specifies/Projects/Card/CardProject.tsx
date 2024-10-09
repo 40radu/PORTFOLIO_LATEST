@@ -1,27 +1,29 @@
 import React from 'react'
 import styles from './_card-project.module.scss'
-import ButtonDemo from '../Button/ButtonDemo'
-import Link from 'next/link'
-import image_project from '../../../../../public/image_project.png'
+
 import Image from 'next/image'
+import imagePortfolio from '../../../../../public/portfolio.png'
+import imageImusic from '../../../../../public/Imusic.png'
 
-function CardProject() {
+interface ICardProject {
+    name: 'My-portfolio' | 'I-music'
+}
+
+function CardProject({ name }: ICardProject) {
     return (
-        <section className={styles.card_wrapper}>
+        <div className={styles.card_wrapper}>
+            {
+                name == 'My-portfolio' ? <Image src={imagePortfolio} alt='' className={styles.image} /> : ''
+            }
 
-            <Image className={styles.image} src={image_project} alt='image-project' />
-
-            <div className={styles.text_wrapper}>
-                <h3>Project 1</h3>
-                <ul>
-                    <li>html</li>
-                    <li>react</li>
-                </ul>
+            {
+                name == 'I-music' ? <Image src={imageImusic} alt='' className={styles.image} /> : ''
+            }
+            <div className={styles.descriZone}>
+                <h3>{name}</h3>
+                <p className={styles.descriText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
             </div>
-            <Link href={'#'}>
-                <ButtonDemo />
-            </Link>
-        </section>
+        </div>
     )
 }
 

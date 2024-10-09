@@ -27,10 +27,10 @@ function Project() {
 
     return (
         <section className={styles.section_project} id='project' ref={refProjectSection}>
-            <Title title='project' description='Here you can see my some project' underTitle='get in touch' />
+            <Title title='project' description='[[ Here you can see my some project ]]' underTitle='get in touch' />
             <div className={styles.cards_wrapper}>
-                <CardProject />
-                <CardProject />
+                <CardProject name='My-portfolio'/>
+                <CardProject name='I-music'/>
             </div>
         </section>
     )
