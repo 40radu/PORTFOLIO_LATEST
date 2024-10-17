@@ -18,27 +18,32 @@
 .section_home {
     width: 100%;
     min-height: 100vh;
-    @include flex (center, center, row);
-    column-gap: 55px;
+    @include flex (space-between, center, row);
     position: relative;
     background-color: white;
+    padding: 0 170px;
 
     @media (min-width : 1441px) {
+        justify-content: center;
         column-gap: 150px;
     }
 
     @include mediaDesktop {
-        overflow-x: hidden;
+        padding: 0 100px;
     }
 
     @include mediaLaptop {
-        column-gap: 0;
+        padding: 0 60px;
+    }
+
+    @include mediaTabPortrait {
+        padding: 0 45px;
     }
 
     @media (max-width:768px) {
+        justify-content: center;
         flex-direction: column;
         row-gap: 18px;
-        padding-top: 84px 36px 20px;
     }
 
     @media (max-height : 480px) {

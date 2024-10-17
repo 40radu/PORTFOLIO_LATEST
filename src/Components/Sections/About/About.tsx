@@ -33,44 +33,46 @@ function About() {
                 end: 'bottom 65%',
                 // scrub:1,
             },
-            xPercent: -100,
-            duration: 0.55,
-            stagger: 0.25,
+            xPercent: -10,
+            duration: 1.5,
+            ease : 'elastic',
+            stagger: 0.35,
             opacity: 0
 
         })
 
         if (about_section) {
             
-            let animate_pin = gsap.to(about_section.current, {
-                scrollTrigger: {
-                    trigger: about_section.current,
-                    start: 'top top',
-                    end: 'bottom 15%',
-                    // markers: true,
-                    scrub: 1,
-                    pin: true,
-                    pinSpacing: false,
-                },
-                opacity: 0,
+            // let animate_pin = gsap.to(about_section.current, {
+            //     scrollTrigger: {
+            //         trigger: about_section.current,
+            //         start: 'top top',
+            //         end: 'bottom 15%',
+            //         // markers: true,
+            //         scrub: 1,
+            //         pin: true,
+            //         pinSpacing: false,
+            //     },
+            //     opacity: 0,
+            //     x : +25
         
-            })
+            // })
 
-            ScrollTrigger.create({
-                trigger: about_section.current,
-                start: 'top top',
-                end: 'bottom top',
-                onLeave: () => {
-                    // console.log('leave')
-                    animate_pin.scrollTrigger?.disable()
-                    // console.log("enabled?")
-                  },
-                  onLeaveBack: () => {
-                    // console.log('leave back')
-                    animate_pin.scrollTrigger?.enable()
-                    // console.log("disable")
-                  }
-            })
+            // ScrollTrigger.create({
+            //     trigger: about_section.current,
+            //     start: 'top top',
+            //     end: 'bottom top',
+            //     onLeave: () => {
+            //         // console.log('leave')
+            //         animate_pin.scrollTrigger?.disable()
+            //         // console.log("enabled?")
+            //       },
+            //       onLeaveBack: () => {
+            //         // console.log('leave back')
+            //         animate_pin.scrollTrigger?.enable()
+            //         // console.log("disable")
+            //       }
+            // })
 
             gsap.from(about_section.current, {
                 scrollTrigger: {

@@ -44,20 +44,6 @@ function Contact() {
 
     const [buttonContent, setButtonContent] = useState<"Send" | "Loading">('Send')
 
-
-    // async function verifyEmail(email: string) {
-    //     const apiKey = 'IzxRXAvs2d56WxeTmpl2U';
-    //     const url = `https://api.verifyemailaddress.org/api/verifyEmail?email=${encodeURIComponent(email)}&apiKey=${apiKey}`;
-
-    //     try {
-    //         const response = await axios.get(url);
-    //         return response.data;
-    //     } catch (error) {
-    //         console.error(error);
-    //         return null;
-    //     }
-    // }
-
     function handleChangeValue(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         const { name, value } = e.target
         // const name = e.target.name
@@ -255,7 +241,7 @@ function Contact() {
                     />
                     <TextArea onChange={handleChangeValue} value={formData.message} />
 
-                    {viewEmailError && <p className={styles.errorEmail}>
+                    {viewEmailError && <p className={styles.errorEmail} >
                         <b> Name or Email is not valided !</b>
                          </p>}
 

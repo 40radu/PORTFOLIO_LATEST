@@ -3,9 +3,17 @@
 .wrapper_scroll {
     @include flex (center, center, column);
     position: absolute;
-    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 18px;
     row-gap: 10px;
-    
+    width: fit-content;
+    @include mediaLaptop {
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
 
     @media (max-width : 768px) {
         display: none;
@@ -16,5 +24,9 @@
         color: $blue-primary;
         text-transform: uppercase;
         letter-spacing: text-space(16,10);
+
+        @include mediaLaptop {
+      display: none;
+        }
     }
 }

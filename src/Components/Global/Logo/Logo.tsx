@@ -8,9 +8,8 @@ import styles from './_logo.module.scss'
 function Logo() {
   return (
     <Link translate='no' href={'#home'} className={styles.logo} >
-        <p className={styles.logo__top}>Portfolio</p>
-        <p className={styles.logo__bottom} >Radonirina</p>
         <Image src={logoMobile} alt='logo'/>
+        <p className={styles.logo__text} >-Portfolio</p>
     </Link>
   )
 }

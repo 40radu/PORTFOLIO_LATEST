@@ -15,7 +15,6 @@
     }
 
     p {
-        // height: 145px;
         color: white;
         -webkit-text-stroke: 1.5px $black-35;
         text-transform: uppercase;
@@ -28,16 +27,14 @@
         @include mediaMobile {
             font-size: 54px;
             letter-spacing: 4.56px;
-            // height: 75px;
         }
 
         @media (max-height : 480px) {
-            font-size: 60px;
-            // height: 80px;    
+            font-size: 50px;
         }
 
         @media (max-width : 320px) {
-            font-size: 55px;
+            font-size: 45px;
         }
     }
 

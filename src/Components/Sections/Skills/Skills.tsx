@@ -40,6 +40,7 @@ function Skills() {
                 duration: 0.55,
                 stagger: 0.10,
                 opacity: 0,
+                ease : 'sine'
             })
         }
 

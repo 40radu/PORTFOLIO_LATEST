@@ -1,7 +1,6 @@
 @import '../../../../app/mixins';
 
 .menu_bar {
-    // margin-left: 10px;
     @include flex (center, center, row);
     column-gap: 25px;
     width: fit-content;
@@ -9,9 +8,6 @@
     background-color: transparent;
     cursor: pointer;
     border-radius: 5px;
-    // border: 1px solid white;
-    // transition: 2s;
-    // backdrop-filter: blur(2px);
     display: none;
 
     @media (max-width : 768px) {
@@ -56,7 +52,7 @@
     margin-top: 70.5px;
 
     @include mediaMobile {
-        height: 60vh;
+        height: fit-content;
     }
 
     @media (max-height : 480px) {

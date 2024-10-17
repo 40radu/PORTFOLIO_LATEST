@@ -6,6 +6,7 @@
     @include flex(start, start, column);
     box-shadow: 8px 10px 13px rgba(0, 0, 0, 0.08);
     border-radius: 4px;
+    position: relative;
 
     @include mediaLaptop {
         width: 400px;
@@ -18,6 +19,8 @@
     @include mediaMobile {
         width: 100%;
     }
+
+    cursor: pointer;
 
     .image {
         width: 100%;
@@ -67,4 +70,5 @@
             }
         }
     }
+
 }

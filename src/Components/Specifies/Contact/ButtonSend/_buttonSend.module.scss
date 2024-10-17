@@ -16,11 +16,11 @@
         height: 51px;
     }
 
-    @media (max-width : 768px){
+    @media (max-width : 768px) {
         width: 570px;
     }
 
-    @include mediaMobile{
+    @include mediaMobile {
         width: 100%;
         height: fit-content;
         padding: 10px;
@@ -33,7 +33,8 @@
             width: 21px;
             height: 22px;
         }
-        @include mediaMobile{
+
+        @include mediaMobile {
             width: 18px;
             height: 18px;
         }
@@ -46,59 +47,36 @@
         color: $white;
         font-weight: 600;
         text-transform: capitalize;
+        height: auto;
 
-        @include mediaLaptop {
-            font-size: 16px;
-        }
-
-        @include mediaMobile{
+        @include mediaMobile {
             font-size: 14px;
             letter-spacing: text-space(14, 12);
         }
     }
 
     &:hover {
-        width: 440px;
-        letter-spacing: text-space(17, 8);
+        scale: 0.96;
+    }
 
-        @include mediaLaptop {
-            width: 390px;
-        }
-
-        @media (max-width : 768px) {
-            width: 550px;
-        }
-
-        @include mediaMobile{
-            width: 100%;
-            height: fit-content;
-            padding: 10px;
-            column-gap: 10px;
-        }
+    &:active{
+        scale: 1;
     }
 
     &:disabled {
         opacity: 0.6;
 
         &:hover {
-            width: 460px;
-            letter-spacing: text-space(17, 12);
+           scale: 1;
+        }
+    }
 
-            @include mediaLaptop {
-                width: 410px;
-                height: 51px;
-            }
-
-            @media (max-width : 768px) {
-                width: 570px;
-            }
-
-            @include mediaMobile{
-                width: 100%;
-                height: fit-content;
-                padding: 10px;
-                column-gap: 10px;
-            }
+    @media (hover :none) and (pointer : coarse) {
+        &:active {
+            scale: 0.96;
+        }
+        &:not(:active){
+            scale: 1;
         }
     }
 

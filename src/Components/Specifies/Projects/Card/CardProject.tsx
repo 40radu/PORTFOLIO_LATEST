@@ -1,17 +1,47 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import styles from './_card-project.module.scss'
 
 import Image from 'next/image'
 import imagePortfolio from '../../../../../public/portfolio.png'
 import imageImusic from '../../../../../public/Imusic.png'
+import gsap from 'gsap'
 
 interface ICardProject {
     name: 'My-portfolio' | 'I-music'
 }
 
 function CardProject({ name }: ICardProject) {
+
+    const card = useRef<HTMLAnchorElement>(null)
+
+    function handleMouseEnter() {
+        gsap.to(card.current, {
+            scale: 1.05,
+            duration: 1,
+            ease: 'elastic'
+        })
+    }
+
+    function handleMouseLeave() {
+        gsap.to(card.current, {
+            scale: 1,
+            duration: 1,
+            ease: 'back'
+        })
+    }
+
+    function handleTouch() {
+        handleMouseEnter()
+
+        setTimeout(() => {
+            handleMouseLeave()
+        }, 1000)
+    }
+
     return (
-        <div className={styles.card_wrapper}>
+        <a title='web site' href={name == 'I-music' ? 'https://latest-i-music.vercel.app' : 'https://portfolio-latest-umber.vercel.app'} target='_blank' className={styles.card_wrapper} onMouseEnter={handleMouseEnter} onTouchStart={handleTouch} onMouseLeave={handleMouseLeave} ref={card}>
             {
                 name == 'My-portfolio' ? <Image src={imagePortfolio} alt='' className={styles.image} /> : ''
             }
@@ -19,11 +49,16 @@ function CardProject({ name }: ICardProject) {
             {
                 name == 'I-music' ? <Image src={imageImusic} alt='' className={styles.image} /> : ''
             }
+
+            {/* <video src="/video.mp4" ref={videoRef}></video> */}
             <div className={styles.descriZone}>
                 <h3>{name}</h3>
-                <p className={styles.descriText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p className={styles.descriText}>
+                    { name == 'My-portfolio' ? 'This portfolio represents my skills and know-how as developer, while highlighting my achievements' : ''}
+                </p>
             </div>
-        </div>
+
+        </a>
     )
 }
 

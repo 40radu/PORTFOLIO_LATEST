@@ -82,8 +82,6 @@ function Dashboard() {
                 </div>
             </div>
 
-            {/* <Mouse /> */}
-
             <Scroll />
         </section>
     )
