@@ -29,7 +29,7 @@ function MenuBar() {
                     right: "0",
                     duration: 0.60,
                     delay: 0,
-                    ease : 'power4'
+                    ease: 'power4'
                 })
             }
 
@@ -45,7 +45,7 @@ function MenuBar() {
                     right: "0",
                     duration: 0.60,
                     delay: 0,
-                    ease : 'power4'
+                    ease: 'power4'
 
                 });
 
@@ -123,6 +123,8 @@ function MenuBar() {
                 <NavLink href={'#skills'} text={'skills'} onClick={handleClickMenu} />
                 <NavLink href={'#project'} text={'project'} onClick={handleClickMenu} />
                 <NavLink href={'#contact'} text={'contact'} onClick={handleClickMenu} />
+                <p className={styles.descriNav}>navigate to</p>
+
             </ul>
 
         </>

@@ -11,22 +11,24 @@
     }
 
     @include mediaMobile {
-        height: 80px;
+        height: 75px;
     }
 
     p {
         color: white;
         -webkit-text-stroke: 1.5px $black-35;
         text-transform: uppercase;
-        text-shadow: 3px 3px 1px $black-35;
+        text-shadow: 4px 4px 1px $black-35;
         font-weight: 800;
         font-size: 75px;
         letter-spacing: text-space(110, 8);
 
 
         @include mediaMobile {
-            font-size: 54px;
+            font-size: 50px;
             letter-spacing: 4.56px;
+            text-shadow: 3px 3px 1px $black-35;
+
         }
 
         @media (max-height : 480px) {

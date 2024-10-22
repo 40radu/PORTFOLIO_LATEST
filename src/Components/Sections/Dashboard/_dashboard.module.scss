@@ -37,7 +37,7 @@
     }
 
     @include mediaTabPortrait {
-        padding: 0 45px;
+        padding: 25px 45px;
     }
 
     @media (max-width:768px) {
@@ -81,7 +81,7 @@
         @include flex (start, start, column);
         row-gap: 13px;
 
-        @media(min-width : 1441px){
+        @media(min-width : 1441px) {
             row-gap: 15px;
         }
 
@@ -126,6 +126,11 @@
                 text-align: center;
                 letter-spacing: 6px;
                 width: 520px;
+            }
+
+            @media (max-height:480px) {
+                font-size: 34px;
+                letter-spacing: 2.9px;
             }
 
             @include mediaMobile {

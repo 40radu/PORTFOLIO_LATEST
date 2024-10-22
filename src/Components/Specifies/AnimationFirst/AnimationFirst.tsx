@@ -23,14 +23,14 @@ function AnimationFirst() {
     const textRight = document.querySelector('#text_right') as HTMLParagraphElement
 
     setTimeout(() => {
-        textLeft.style.visibility = 'visible'
-        textRight.style.visibility = 'visible'
+      textLeft.style.visibility = 'visible'
+      textRight.style.visibility = 'visible'
     }, 800)
 
     if (bannerLeft) {
-      gsap.to (bannerRight, {
-        backgroundColor : '#f8fafc',
-        duration : 0.7
+      gsap.to(bannerRight, {
+        backgroundColor: '#f8fafc',
+        duration: 0.7
       })
       gsap.to(bannerLeft, {
         yPercent: -1,
@@ -43,7 +43,8 @@ function AnimationFirst() {
       gsap.to(bannerLeft, {
         delay: 1.75,
         duration: 0.85,
-        opacity : 0
+        opacity: 0,
+        pointerEvents : 'none'
 
       })
     }
@@ -61,7 +62,9 @@ function AnimationFirst() {
       gsap.to(bannerRight, {
         delay: 1.75,
         duration: 0.85,
-        opacity : 0
+        opacity: 0,
+        pointerEvents : 'none'
+
 
 
       })
@@ -71,10 +74,7 @@ function AnimationFirst() {
   })
 
   return (
-    // <section className={styles.animation_section} id='wrapper_animation'>
     <section>
-
-
       <div id='banner__left' className={styles.bannerLeft}>
         <p id='text_left'>Welcome To</p>
       </div>
@@ -83,7 +83,6 @@ function AnimationFirst() {
         <p id='text_right'>
           My Portfolio</p>
       </div>
-
     </section>
 
   )

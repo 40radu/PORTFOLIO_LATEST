@@ -54,7 +54,8 @@ function CardProject({ name }: ICardProject) {
             <div className={styles.descriZone}>
                 <h3>{name}</h3>
                 <p className={styles.descriText}>
-                    { name == 'My-portfolio' ? 'This portfolio represents my skills and know-how as developer, while highlighting my achievements' : ''}
+                    { name == 'My-portfolio' ? 'This portfolio represents my skills and know-how as developer, while highlighting my achievements' : 
+                    'An e-commerce site to sell guitars, with real-time shopping cart management, and a fluid interface developed with Next.js'}
                 </p>
             </div>
 

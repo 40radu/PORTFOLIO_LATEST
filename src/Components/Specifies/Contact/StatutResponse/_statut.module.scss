@@ -19,11 +19,13 @@
         @include flex(center, center, column);
         padding: 25px 0;
         row-gap: 5px;
+        margin-bottom: 50px;
+
         h2 {
             font-size: 18px;
             font-weight: 600;
             color: $blue-primary;
-            letter-spacing: text-space(18,4);
+            letter-spacing: text-space(18, 4);
         }
 
         p {
@@ -38,12 +40,25 @@
             background-color: $black-25;
             font-size: 18px;
             color: $white;
-            letter-spacing: text-space(20,2);
+            letter-spacing: text-space(20, 2);
             background-color: $black-25;
             border: none;
             margin-top: 8px;
+
             &:hover {
                 background-color: $black-50;
+            }
+
+            @media (hover: none) and (pointer : coarse) {
+                &:active {
+                    background-color: $black-50;
+                    transition: ease 0.25s;
+                }
+
+                &:not(:active) {
+                    background-color: $black-25;
+                    transition: ease 0.25s;
+                }
             }
         }
     }

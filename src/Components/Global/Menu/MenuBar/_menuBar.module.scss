@@ -39,7 +39,7 @@
 .containerNavigation {
     @include flex (center, center, column);
     width: 100vw;
-    height: 65vh;
+    height: 100vh;
     position: absolute;
     right: -102%;
     top: 0;
@@ -48,17 +48,36 @@
     border-left: 1px dotted rgba(0, 0, 0, 0.15);
     padding-bottom: 20px;
     box-shadow: 0px 3px 3px 0 rgb(0 0 0 / 15%);
-    ;
     margin-top: 70.5px;
+    padding-bottom: 250px;
 
     @include mediaMobile {
-        height: fit-content;
+        padding-bottom: 165px;
     }
 
     @media (max-height : 480px) {
         display: block;
-        padding-bottom: 70.5px;
+        padding-bottom: 150px;
         min-height: 100vh;
         overflow-y: scroll;
+    }
+
+    .descriNav {
+        font-size: 18px;
+        @include flex (center, center, row);
+        height: fit-content;
+        @apply fixed;
+        bottom: 20px;
+        @include text-linear-primary;
+
+        @media (max-height : 480px) {
+            position: initial;
+            padding-top: 40px;
+            width: 100%;
+        }
+
+        @include mediaMobile {
+            font-size: 16px;
+        }
     }
 }
