@@ -1,0 +1,13 @@
+.container {
+    @apply w-screen h-screen flex flex-col justify-center items-center z-50 fixed bg-white gap-y-4;
+
+    .descri {
+        @apply text-slate-900;
+    }
+
+    .buttonBack {
+        @apply px-4 py-2 rounded-full text-black;
+        font-size: 14px;
+        border: 1px solid black;
+    }
+}

@@ -21,7 +21,7 @@ function Scroll() {
                 stagger: 0.12,
                 duration : 3,
                 display : 'none',
-                color : '#ff0000a6',
+                color : '#c80000',                
                 repeat : Infinity,
                 ease : 'back',
             })

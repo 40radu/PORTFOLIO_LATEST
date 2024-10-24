@@ -18,11 +18,15 @@ function MenuBar() {
     function handleClickMenu() {
         const body: HTMLBodyElement | null = document.querySelector('body')
         const navBar = document.querySelector(`.${styles.containerNavigation}`)
-        const navLink = document.querySelectorAll(`.${styles.containerNavigation} a`)
         const maskForNav = document.getElementById('mask_for_nav')
         const maskBody = document.getElementById('mask_body')
+        const logo = document.getElementById('linkLogo') as HTMLAnchorElement
 
         if (menu === 'menu') {
+
+            if (logo) {
+                logo.style.pointerEvents = 'none'
+            }
 
             if (maskForNav) {
                 gsap.to(maskForNav, {
@@ -52,6 +56,11 @@ function MenuBar() {
             }
 
         } else {
+
+            if (logo) {
+                logo.style.pointerEvents = 'initial'
+            }
+
             if (body) {
                 body.style.overflow = 'auto'
                 gsap.to(navBar, {

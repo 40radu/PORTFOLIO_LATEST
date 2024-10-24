@@ -37,11 +37,11 @@ function CardProject({ name }: ICardProject) {
 
         setTimeout(() => {
             handleMouseLeave()
-        }, 1000)
+        }, 250)
     }
 
     return (
-        <a title='web site' href={name == 'I-music' ? 'https://latest-i-music.vercel.app' : 'https://portfolio-latest-umber.vercel.app'} target='_blank' className={styles.card_wrapper} onMouseEnter={handleMouseEnter} onTouchStart={handleTouch} onMouseLeave={handleMouseLeave} ref={card}>
+        <a title='web site' href={name == 'I-music' ? 'https://latest-i-music.vercel.app' : '#home'} target={name == 'I-music' ? '_blank' : '_self'} className={styles.card_wrapper} onMouseEnter={handleMouseEnter} onTouchStart={handleTouch} onMouseLeave={handleMouseLeave} ref={card}>
             {
                 name == 'My-portfolio' ? <Image src={imagePortfolio} alt='' className={styles.image} /> : ''
             }
