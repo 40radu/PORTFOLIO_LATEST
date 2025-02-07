@@ -67,7 +67,7 @@ function Dashboard() {
                 <p>Hello <span className={styles.emoji}>&#128075;</span>, i'am <span className={styles.name}>Radonirina</span> and
                     welcome to my portfolio. It will help you get to know me better. Remember, we can build something extraordinary together!</p>
                 <div className={styles.container_button}>
-                    <a href="cv.pdf" download="cv_portfolio_rado.pdf">
+                    <a href="cv.pdf" download="cv.pdf">
                         <Button type="button"
                             className="btn_secondary"
                             value="Download CV"
